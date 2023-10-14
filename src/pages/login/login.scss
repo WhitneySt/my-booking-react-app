@@ -1,0 +1,55 @@
+.login{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h1{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        input{
+            padding: 5px 20px;
+            border-radius: 4px;
+            outline: none;
+            border: 1px solid #9095A0FF;
+            font-size: 18px;
+            font-weight: 400;
+
+            &:hover{
+                color: #BCC1CAFF;
+                border-color: #6E7787FF;
+            }
+            &:focus{
+                color: #BCC1CAFF;
+                border-color: #3EBDE0FF;
+            }
+        }
+
+        label{
+            font-size: 18px;
+            font-weight: 400;
+            color: #171A1FFF;
+            
+        }
+        button[type='submit']{
+            background-color: #3EBDE0FF;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            color:#FFFFFF;
+            font-size: 18px;
+
+            &:hover{
+                background-color: #1F9EC1FF;
+            }
+        }
+    }
+}
