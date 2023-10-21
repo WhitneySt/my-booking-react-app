@@ -6,12 +6,12 @@ const useForm = (initalValue = {}) => {
 
     const handleChangeInputs = (event) => {
         const { name, value, files, type } = event.target;
-        if (type === 'file') {
-            console.log(files);
-        }
+        // if (type === 'file') {
+        //     console.log(files);
+        // }
         setDataForm({
             ...dataForm,
-            [name]: value
+            [name]: type === 'file' ? files : value
         });
     }
 
