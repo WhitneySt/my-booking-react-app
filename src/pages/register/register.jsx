@@ -19,7 +19,6 @@ const Register = () => {
                 avatar: urlImage
             }
             const response = await createAnUser(newUser);
-            console.log(response);
             if (response) {
                 Swal.fire('Excelente!', 'Has creado exitosamente una cuenta', 'success').then(() => {
                     navigate('/login');

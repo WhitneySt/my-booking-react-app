@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../../router/router'
 
 const Home = () => {
+  const { accommodations } = useContext(AppContext);
+  const { accommodationsDispatch } = accommodations;
+
+  
+
   return (
-    <div>Home</div>
+    <main>
+      <section></section>
+    </main>
   )
 }
 

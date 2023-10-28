@@ -5,10 +5,12 @@ import './login.scss';
 import { getUserByEmailAndPassword } from '../../services/userServices';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import useSessionStorage from '../../hooks/useStorage';
 
 const Login = () => {
   const { dataForm, handleChangeInputs } = useForm();
   const { userLogged: { userLoggedDispatch } } = useContext(AppContext);
+  const { saveInfoInStorage } = useSessionStorage('user');
 
 
 
@@ -29,7 +31,8 @@ const Login = () => {
             user: user
           }
         }
-        userLoggedDispatch(action);    
+        userLoggedDispatch(action);
+        saveInfoInStorage(user);
 
       } else {
         Swal.fire(
