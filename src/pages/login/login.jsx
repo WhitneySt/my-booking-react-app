@@ -19,11 +19,6 @@ const Login = () => {
     if (dataForm.email.trim() && dataForm.password.trim()) {
       const user = await getUserByEmailAndPassword(dataForm.email, dataForm.password);
       if (user) {
-        Swal.fire(
-          'Excelente!',
-          'Has iniciado sesión exitosamente!',
-          'success'
-        )
         const action = {
           type: 'LOGIN',
           payload: {
@@ -33,6 +28,11 @@ const Login = () => {
         }
         userLoggedDispatch(action);
         saveInfoInStorage(user);
+        Swal.fire(
+          'Excelente!',
+          'Has iniciado sesión exitosamente!',
+          'success'
+        )
 
       } else {
         Swal.fire(

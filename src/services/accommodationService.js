@@ -16,10 +16,9 @@ export const getAccommodationsWihtCategories = async () => {
                 const category = categories.find(element => element.id === categoryId)
                 return {
                     ...item,
-                    category
+                    category: category.name
                 }
             })
-            console.log(accommodationsWithCategory);
             return accommodationsWithCategory;
         } else {
             return null;
