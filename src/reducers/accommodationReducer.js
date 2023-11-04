@@ -1,6 +1,7 @@
 export const accommodationInitial = {
     accommodationList: [],
-    filteredAccommodation:[]
+    filteredAccommodation: [],
+    activeFilter: null
 }
 
 const accommodationReducer = (state = accommodationInitial, action) => {
@@ -13,7 +14,8 @@ const accommodationReducer = (state = accommodationInitial, action) => {
         case 'FILTER':
             return {
                 ...state,
-                filteredAccommodation: action.payload
+                filteredAccommodation: action.payload.filter,
+                activeFilter: action.payload.active
             }
         default:
             return state;

@@ -6,7 +6,8 @@ const endpoints = {
     findUserByEmail: (email) => `${URL_BASE}users?email=${email}`,
     accommodations: `${URL_BASE}accommodations`,
     categories: `${URL_BASE}category`,
-    categoryById: (id)=>`${URL_BASE}category/${id}`
+    categoryById: (id) => `${URL_BASE}category/${id}`,
+    accommodationsByCategory: (categoryId) => `${URL_BASE}accommodations?categoryId=${categoryId}`
 
 };
 

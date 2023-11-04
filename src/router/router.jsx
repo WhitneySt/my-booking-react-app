@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useReducer } from 'react'
+import React, { createContext, useEffect, useReducer, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from '../pages/login/login';
 import './router.scss';
@@ -15,7 +15,9 @@ export const AppContext = createContext({});
 const Router = () => {
 
   const [userLogged, userLoggedDispatch] = useReducer(userLoggedReducer, userLoggedInitial);
-  const [accommodations, accommodationsDispatch] = useReducer(accommodationReducer, accommodationInitial)
+  const [accommodations, accommodationsDispatch] = useReducer(accommodationReducer, accommodationInitial);
+  const [categories, setCategories] = useState([]);
+
   const { storagedData } = useSessionStorage('user');
 
   useEffect(() => {
@@ -32,7 +34,8 @@ const Router = () => {
 
   const globalStates = {
     userLogged: { userLogged, userLoggedDispatch },
-    accommodations: { accommodations, accommodationsDispatch }
+    accommodations: { accommodations, accommodationsDispatch },
+    category: { categories, setCategories }
   }
   return (
     <AppContext.Provider value={globalStates}>
